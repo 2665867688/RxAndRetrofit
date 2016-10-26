@@ -5,6 +5,7 @@ import com.example.administrator.rxandretrofit.bean.Root;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import rx.Observable;
 
 /**
  * Created by Administrator on 2016/10/26.
@@ -21,4 +22,12 @@ public interface ApiService {
     Call<Root> getSearchBooks2(@Query("q") String name,
                               @Query("tag") String tag, @Query("start") int start,
                               @Query("count") int count);
+
+    /**
+     * rxjava + retrofit
+     */
+    @GET("book/search")
+    Observable<Root> getSearchBooks3(@Query("q") String name,
+                                     @Query("tag") String tag, @Query("start") int start,
+                                     @Query("count") int count);
 }

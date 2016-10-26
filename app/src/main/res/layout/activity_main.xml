@@ -1,33 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.example.administrator.rxandretrofit.MainActivity">
 
-    <Button
-        android:id="@+id/btn_get"
+    <LinearLayout
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="getString baidu" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_get2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="getString" />
+        <Button
+            android:id="@+id/btn_get"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="getString baidu" />
 
-    <Button
-        android:id="@+id/btn_get3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="get实体类" />
+        <Button
+            android:id="@+id/btn_get2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="getString" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btn_get3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get实体类" />
+
+        <Button
+            android:id="@+id/btn_rx_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rxjava + retrofit" />
+
 
         <TextView
             android:id="@+id/tv_show"
@@ -35,5 +42,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Hello World!" />
-    </ScrollView>
-</LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,5 +1,6 @@
 package com.example.administrator.rxandretrofit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,9 +23,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ *
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button mBtnGet, mBtnGet2,mBtnGet3;
+    private Button mBtnGet, mBtnGet2,mBtnGet3,mBtnRxRt;
     private TextView mTvShow;
 
     @Override
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnGet2.setOnClickListener(this);
         mBtnGet3 = (Button) findViewById(R.id.btn_get3);
         mBtnGet3.setOnClickListener(this);
+        mBtnRxRt = (Button) findViewById(R.id.btn_rx_retrofit);
+        mBtnRxRt.setOnClickListener(this);
         mTvShow = (TextView) findViewById(R.id.tv_show);
     }
 
@@ -58,6 +64,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_get3://实体类数据
                 Toast.makeText(this,"实体类",Toast.LENGTH_SHORT).show();
                 getDbGson();
+                break;
+            case R.id.btn_rx_retrofit:
+                startActivity(new Intent(this,RxRtActivity.class));
                 break;
         }
     }
