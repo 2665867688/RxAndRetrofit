@@ -7,5 +7,7 @@ package com.example.administrator.rxandretrofit.webservice;
  */
 
 public class HttpsUtils {
+    public void get(){
 
+    }
 }

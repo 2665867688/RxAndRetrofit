@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.rxandretrofit.bean.Root;
+import com.example.administrator.rxandretrofit.constant.Const;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toast.makeText(this,"" + Const.sServiceUrl,Toast.LENGTH_SHORT).show();
         initView();
     }
 
