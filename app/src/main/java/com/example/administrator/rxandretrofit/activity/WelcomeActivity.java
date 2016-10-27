@@ -1,13 +1,12 @@
-package com.example.administrator.rxandretrofit;
+package com.example.administrator.rxandretrofit.activity;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
 
+import com.example.administrator.rxandretrofit.R;
 import com.example.administrator.rxandretrofit.constant.Const;
-import com.example.administrator.rxandretrofit.constant.LibConstant;
 
 import java.util.Properties;
 

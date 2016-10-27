@@ -1,4 +1,4 @@
-package com.example.administrator.rxandretrofit;
+package com.example.administrator.rxandretrofit.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.administrator.rxandretrofit.BaseActivity;
+import com.example.administrator.rxandretrofit.R;
 import com.example.administrator.rxandretrofit.bean.Root;
 import com.example.administrator.rxandretrofit.constant.RequestType;
 

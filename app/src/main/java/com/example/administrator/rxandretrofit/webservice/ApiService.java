@@ -1,4 +1,4 @@
-package com.example.administrator.rxandretrofit;
+package com.example.administrator.rxandretrofit.webservice;
 
 import com.example.administrator.rxandretrofit.bean.Root;
 

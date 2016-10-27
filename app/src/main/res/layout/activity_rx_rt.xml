@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.rxandretrofit.RxRtActivity">
+    tools:context="com.example.administrator.rxandretrofit.activity.RxRtActivity">
 
     <LinearLayout
         android:id="@+id/activity_rx_rt"

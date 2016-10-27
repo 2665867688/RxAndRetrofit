@@ -1,6 +1,5 @@
 package com.example.administrator.rxandretrofit.webservice;
 
-import com.example.administrator.rxandretrofit.ApiService;
 import com.example.administrator.rxandretrofit.constant.Const;
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.example.administrator.rxandretrofit;
+package com.example.administrator.rxandretrofit.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.administrator.rxandretrofit.webservice.ApiService;
+import com.example.administrator.rxandretrofit.R;
 import com.example.administrator.rxandretrofit.bean.Root;
 
 import java.io.IOException;
