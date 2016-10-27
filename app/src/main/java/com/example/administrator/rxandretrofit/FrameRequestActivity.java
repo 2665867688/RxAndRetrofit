@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.administrator.rxandretrofit.bean.Root;
 import com.example.administrator.rxandretrofit.constant.RequestType;
 
 import java.util.HashMap;
@@ -40,7 +41,12 @@ public class FrameRequestActivity extends BaseActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_frt_request:
-                Observable<String> observable = mServiceString.getSearchBooks5("小王子", "", 0, 3);
+                Map<String, Object> params = new HashMap<>();
+                params.put("q", "小王子");
+                params.put("tag", "");
+                params.put("start", 0);
+                params.put("count", 3);
+                Observable<Root> observable = mServiceGson.getSearchBooks6(params);
                 sendRequest(observable, RequestType.test);
                 break;
         }
@@ -55,26 +61,15 @@ public class FrameRequestActivity extends BaseActivity implements View.OnClickLi
      */
     @Override
     protected <T> void requestSuccess(T data, RequestType type) {
-        switch (type) {
-            case test:
-                String datas = data.toString();
-                mTvShow.setText(datas);
-                break;
-            default:
-                break;
-        }
+        Root result = (Root) data;
+        mTvShow.setText("标题：" + result.getBooks().get(0).getTitle() + "\n"
+                + "作者：" + result.getBooks().get(0).getAuthor()
+                + "\n" + "   " + result.getBooks().get(0).getSummary());
     }
 
     @Override
     protected <T> void requestFail(T data, RequestType type) {
-        switch (type) {
-            case test:
-                String datas = data.toString();
-                mTvShow.setText(datas);
-                break;
-            default:
-                break;
-        }
+        showToast("服务器返回错误");
     }
 
 

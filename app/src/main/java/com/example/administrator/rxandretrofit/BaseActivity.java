@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 import com.example.administrator.rxandretrofit.constant.RequestType;
 import com.example.administrator.rxandretrofit.webservice.HttpsUtils;
+import com.google.gson.Gson;
 
-import retrofit2.Retrofit;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -21,9 +21,11 @@ import rx.schedulers.Schedulers;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
+    //返回String
     protected ApiService mServiceString;
+    //返回实体类
     protected ApiService mServiceGson;
-
+    protected Gson mGson = new Gson();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

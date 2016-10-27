@@ -44,5 +44,7 @@ public interface ApiService {
     Observable<String> getSearchBooks5(@Query("q") String name,
                                      @Query("tag") String tag, @Query("start") int start,
                                      @Query("count") int count);
+    @GET("book/search")
+    Observable<Root> getSearchBooks6(@QueryMap Map<String, Object> params);
 
 }
