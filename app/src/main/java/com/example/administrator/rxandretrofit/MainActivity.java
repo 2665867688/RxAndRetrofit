@@ -29,14 +29,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button mBtnGet, mBtnGet2,mBtnGet3,mBtnRxRt;
+    private Button mBtnGet, mBtnGet2,mBtnGet3,mBtnRxRt,mBtnFrame;
     private TextView mTvShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this,"" + Const.sServiceUrl,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"请求地址：" + Const.sServiceUrl,Toast.LENGTH_SHORT).show();
         initView();
     }
 
@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnGet3.setOnClickListener(this);
         mBtnRxRt = (Button) findViewById(R.id.btn_rx_retrofit);
         mBtnRxRt.setOnClickListener(this);
+        mBtnFrame = (Button) findViewById(R.id.btn_use_frame);
+        mBtnFrame.setOnClickListener(this);
         mTvShow = (TextView) findViewById(R.id.tv_show);
     }
 
@@ -69,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_rx_retrofit:
                 startActivity(new Intent(this,RxRtActivity.class));
+                break;
+            case R.id.btn_use_frame:
+                startActivity(new Intent(this,FrameRequestActivity.class));
                 break;
         }
     }

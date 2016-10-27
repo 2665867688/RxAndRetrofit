@@ -40,7 +40,7 @@ public class WelcomeActivity extends AppCompatActivity {
         try {
             prop.load(getAssets().open("config.properties"));
             Const.sServiceUrl = prop.getProperty("webserver");
-            LibConstant.sServiceUrl = Const.sServiceUrl;
+//            LibConstant.sServiceUrl = Const.sServiceUrl;
 //            Const.DEBUG = "true".endsWith(prop.getProperty("debug"));
         } catch (Exception e1) {
             e1.printStackTrace();

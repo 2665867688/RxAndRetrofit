@@ -17,6 +17,12 @@
             android:layout_height="wrap_content"
             android:text="请求数据" />
 
+        <Button
+            android:id="@+id/btn_requests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请求数据string" />
+
         <TextView
             android:id="@+id/tv_rxrt_show"
             android:layout_width="match_parent"

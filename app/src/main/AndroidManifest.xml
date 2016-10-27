@@ -18,7 +18,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".RxRtActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".FrameRequestActivity"
+            android:label="@string/title_activity_frame_request"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
