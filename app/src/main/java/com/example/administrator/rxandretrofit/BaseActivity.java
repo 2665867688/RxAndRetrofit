@@ -50,14 +50,14 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param type
      */
 
-    protected void  sendRequest(Observable<String> observable, final RequestType type) {
+    protected <T> void sendRequest(Observable<T> observable, final RequestType type) {
         showDialog();
         observable
                 // 指定 subscribe() 所发生的线程，即 Observable.OnSubscribe 被激活时所处的线程。或者叫做事件产生的线程。
                 .subscribeOn(Schedulers.io())
                 // observeOn(): 指定 Subscriber 所运行在的线程。或者叫做事件消费的线程。
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<String>() {
+                .subscribe(new Subscriber<T>() {
                     @Override
                     public void onCompleted() {
                         hideDialog();
@@ -71,7 +71,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onNext(String data) {
+                    public void onNext(T data) {
                         int result = 0;
                         if (result == 0)
                             requestSuccess(data, type);
