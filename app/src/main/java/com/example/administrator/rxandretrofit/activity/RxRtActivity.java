@@ -68,7 +68,9 @@ public class RxRtActivity extends AppCompatActivity implements View.OnClickListe
     private void sendRequest() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.douban.com/v2/")
-                .addConverterFactory(GsonConverterFactory.create())
+                //定义解析工具
+                .addConverterFactory(GsonConverterFactory.create())//gson 解析
+                //添加回调接口适配器 ，使retrofit回调适配rxjava
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);
@@ -125,9 +127,9 @@ public class RxRtActivity extends AppCompatActivity implements View.OnClickListe
         Observable<String> observable = apiService.getSearchBooks5("小王子", "", 0, 3);
 
         observable
-                // 指定 subscribe() 所发生的线程，即 Observable.OnSubscribe 被激活时所处的线程。或者叫做事件产生的线程。
+                // 指定 subscribe() 所发生的线程，即 Observable.OnSubscribe 被激活时所处的线程。或者叫做事件产生的线程。网络请求
                 .subscribeOn(Schedulers.io())
-                // observeOn(): 指定 Subscriber 所运行在的线程。或者叫做事件消费的线程。
+                // observeOn(): 指定 Subscriber 所运行在的线程。或者叫做事件消费的线程。数据处理
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<String>() {
                     @Override

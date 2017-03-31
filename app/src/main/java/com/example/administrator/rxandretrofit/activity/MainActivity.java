@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this,"实体类",Toast.LENGTH_SHORT).show();
                 getDbGson();
                 break;
-            case R.id.btn_rx_retrofit:
+            case R.id.btn_rx_retrofit://Rxjava+Retrofit
                 startActivity(new Intent(this,RxRtActivity.class));
                 break;
-            case R.id.btn_use_frame:
+            case R.id.btn_use_frame://封装请求框架
                 startActivity(new Intent(this,FrameRequestActivity.class));
                 break;
         }
