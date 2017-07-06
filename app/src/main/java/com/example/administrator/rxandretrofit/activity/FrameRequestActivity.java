@@ -43,6 +43,7 @@ public class FrameRequestActivity extends BaseActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_frt_request:
+                //设置请求参数
                 Map<String, Object> params = new HashMap<>();
                 params.put("q", "小王子");
                 params.put("tag", "");
